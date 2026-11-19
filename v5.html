@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Websites für Gastro aus Mayen</title>
+<meta name="description" content="Fünf Seiten, fünf Gesichter: Websites für Imbiss, Pizzeria, Döner und Bäckerei in Mayen. Ab 120 Euro, in vier Tagen online.">
+<meta property="og:title" content="Websites für Gastro aus Mayen"><meta property="og:image" content="img/pizza.jpg">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f2efe8'/%3E%3Crect x='8' y='8' width='16' height='16' fill='%230d0d0f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0f;--fg:#f2efe8;--mut:#9a978f;--acc:#f2efe8;--stage:#0d0d0f;--stage-ink:#f2efe8;
+--d:'Bricolage Grotesque',system-ui,sans-serif;--t:'Inter',system-ui,sans-serif;--gut:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.55 var(--t);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px var(--gut);mix-blend-mode:difference;color:#fff;font:500 15px var(--t)}
+.nav b{font:700 18px var(--d);letter-spacing:-.02em}
+.nav a{text-decoration:none;margin-left:28px}
+.nav a:hover{text-decoration:underline;text-underline-offset:5px}
+/* hero */
+.hero{min-height:100svh;display:grid;align-content:center;padding:120px var(--gut) 80px;position:relative;overflow:hidden}
+.hero h1{font:700 clamp(54px,11.5vw,190px)/.88 var(--d);letter-spacing:-.045em;max-width:14ch}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .02em .1em;margin:-.04em -.02em -.1em}
+.hero h1 .w>span{display:inline-block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.1,1) forwards;animation-delay:calc(.1s + var(--i)*.1s)}
+@keyframes up{to{transform:none}}
+.hero p{margin-top:36px;max-width:44ch;color:var(--mut);font-size:clamp(17px,1.6vw,21px)}
+.hero .row{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;background:var(--fg);color:var(--bg);font:600 16px var(--t);text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.btn.o{background:none;color:var(--fg);box-shadow:inset 0 0 0 1.5px rgba(242,239,232,.4)}
+.ticker{position:absolute;left:0;right:0;bottom:0;border-top:1px solid rgba(242,239,232,.14);overflow:hidden;white-space:nowrap;padding:16px 0;color:var(--mut);font:500 15px var(--t);letter-spacing:.14em;text-transform:uppercase}
+.ticker div{display:inline-block;animation:tk 40s linear infinite}
+.ticker span{margin:0 26px}
+@keyframes tk{to{transform:translateX(-50%)}}
+.orb{position:absolute;right:-8vw;top:8vh;width:46vw;max-width:680px;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,#ef5a24,#f6b81b,#2f5d3a,#0e3b3a,#e5322b,#ef5a24);filter:blur(70px);opacity:.34;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* stage */
+.work{position:relative;height:calc(100svh*5.4);background:var(--stage);color:var(--stage-ink);transition:background .7s ease,color .7s ease}
+.work .pin{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:minmax(280px,.8fr) 1.7fr;gap:clamp(24px,4vw,72px);align-items:center;padding:90px var(--gut) 40px}
+.meta{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center}
+.meta small{font:500 13px var(--t);letter-spacing:.16em;text-transform:uppercase;opacity:.65;margin-bottom:18px;display:block}
+.slidetxt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateY(30px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.1,1);pointer-events:none}
+.slidetxt.on{opacity:1;transform:none;pointer-events:auto}
+.slidetxt h2{font:700 clamp(40px,5vw,84px)/.95 var(--d);letter-spacing:-.04em}
+.slidetxt p{margin-top:22px;max-width:30ch;opacity:.8;font-size:18px}
+.slidetxt a{margin-top:30px;align-self:flex-start;color:inherit;font:600 16px var(--t);display:inline-flex;gap:10px;align-items:center;padding-bottom:4px;border-bottom:2px solid currentColor;text-decoration:none}
+.slidetxt a:hover{gap:16px}
+.count{position:absolute;left:0;bottom:0;font:500 14px var(--t);opacity:.6;font-variant-numeric:tabular-nums}
+.dots{position:absolute;right:0;bottom:0;display:flex;gap:8px}
+.dots i{width:28px;height:3px;background:currentColor;opacity:.25;transition:opacity .4s}
+.dots i.on{opacity:1}
+.frame{position:relative;width:100%;aspect-ratio:16/10.4;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 90px -30px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.12);transform:perspective(1600px) rotateY(var(--ry,-5deg)) rotateX(var(--rx,2deg));transition:transform .2s ease-out}
+.frame .bar{height:34px;background:#1b1b1d;display:flex;align-items:center;gap:7px;padding:0 14px}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:#555}
+.frame .bar u{margin-left:12px;font:400 12px var(--t);color:#aaa;text-decoration:none;background:#2a2a2d;padding:4px 14px;border-radius:6px;flex:1;max-width:340px}
+.shots{position:absolute;inset:34px 0 0 0;overflow:hidden}
+.shots iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;opacity:0;transition:opacity .7s;pointer-events:none}
+.shots iframe.on{opacity:1;pointer-events:auto}
+/* process */
+.how{padding:clamp(90px,14vw,200px) var(--gut);background:var(--fg);color:var(--bg)}
+.how h2,.price h2,.fin h2{font:700 clamp(44px,7vw,120px)/.92 var(--d);letter-spacing:-.045em;max-width:12ch}
+.steps{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps::before{content:"";position:absolute;left:0;top:9px;height:2px;background:var(--bg);width:calc(var(--p,0)*100%);transition:width .1s linear}
+.steps li{list-style:none;padding:34px 24px 0 0;position:relative;opacity:.25;transition:opacity .5s}
+.steps li.on{opacity:1}
+.steps li::before{content:"";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--bg);transform:scale(.5);transition:transform .5s}
+.steps li.on::before{transform:scale(1)}
+.steps b{font:700 26px/1.1 var(--d);letter-spacing:-.02em;display:block}
+.steps span{display:block;margin-top:10px;color:#5b5a55;font-size:16px}
+.steps em{font:600 13px var(--t);letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:#5b5a55;display:block;margin-bottom:6px}
+/* price */
+.price{padding:clamp(90px,12vw,170px) var(--gut);background:var(--bg)}
+.cards{margin-top:60px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.card{border-radius:26px;padding:clamp(28px,4vw,56px);min-height:340px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.2,.8,.1,1)}
+.card:hover{transform:translateY(-6px)}
+.card.a{background:var(--fg);color:var(--bg)}
+.card.b{background:#1d1d20}
+.card h3{font:600 20px var(--d)}
+.card .n{font:700 clamp(64px,9vw,140px)/.9 var(--d);letter-spacing:-.05em;margin:24px 0}
+.card ul{list-style:none;color:inherit;opacity:.75;display:grid;gap:6px}
+.fin{padding:clamp(90px,14vw,200px) var(--gut) 60px;background:var(--bg);border-top:1px solid rgba(242,239,232,.12)}
+.fin h2{max-width:11ch}
+.fin .row{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
+.foot{margin-top:120px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:14px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.1,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.work{height:auto}
+.work .pin{position:static;height:auto;display:block;padding:80px var(--gut) 40px}
+.meta{display:none}
+.mob{display:block!important}
+.steps{grid-template-columns:1fr 1fr;gap:34px 0}
+.cards{grid-template-columns:1fr}
+.nav a.h{display:none}
+}
+.mob{display:none}
+.mitem{margin-bottom:56px}
+.mitem h2{font:700 40px/1 var(--d);letter-spacing:-.04em;margin-bottom:10px}
+.mitem p{opacity:.8;margin-bottom:18px}
+.mitem .frame{margin-bottom:16px;transform:none}
+.mitem a{font-weight:600}
+@media(prefers-reduced-motion:reduce){.hero h1 .w>span{transform:none;animation:none}.ticker div,.orb{animation:none}.rv{opacity:1;transform:none}.frame{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><b>Renat / Webseiten</b><span><a class="h" href="#arbeiten">Arbeiten</a><a class="h" href="#ablauf">Ablauf</a><a href="#preise">Preise</a><a href="#kontakt">Kontakt</a></span></header>
+
+<section class="hero">
+  <div class="orb" aria-hidden="true"></div>
+  <h1 id="h1" aria-label="Fünf Seiten. Fünf Gesichter.">Fünf Seiten. Fünf Gesichter.</h1>
+  <p>Websites für Imbiss, Pizzeria, Döner und Bäckerei in Mayen. Jede Seite sieht aus wie ihr Haus, nicht wie eine Vorlage. Ab 120 Euro, in vier Tagen online.</p>
+  <div class="row"><a class="btn" href="#arbeiten">Die Seiten ansehen</a><a class="btn o" href="#kontakt">Anfrage schicken</a></div>
+  <div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+</section>
+
+<section class="work" id="arbeiten" aria-label="Arbeiten">
+  <div class="pin">
+    <div class="meta" id="meta"></div>
+    <div class="frame" id="frame"><div class="bar"><i></i><i></i><i></i><u id="url">lawago23.github.io</u></div><div class="shots" id="shots"></div></div>
+  </div>
+  <div class="mob" id="mob" style="padding:0 var(--gut)"></div>
+</section>
+
+<section class="how" id="ablauf">
+  <h2 class="rv">Vier Tage bis online.</h2>
+  <ol class="steps" id="steps">
+    <li><em>Tag 1</em><b>Fotos und Karte</b><span>Ein Handyfoto Ihrer Karte reicht.</span></li>
+    <li><em>Tag 2</em><b>Entwurf</b><span>Sie sehen Ihre Seite auf dem Handy, bevor sie online geht.</span></li>
+    <li><em>Tag 3</em><b>Änderungen</b><span>Ein Durchgang ist enthalten.</span></li>
+    <li><em>Tag 4</em><b>Online</b><span>Mit QR-Code für Tisch und Fenster.</span></li>
+  </ol>
+</section>
+
+<section class="price" id="preise">
+  <h2 class="rv">Ein Preis. Keine Überraschung.</h2>
+  <div class="cards">
+    <div class="card a rv"><div><h3>Website</h3><div class="n">120 €</div></div><ul><li>Karte, Fotos, Öffnungszeiten, Anfahrt</li><li>Eigenes Design, fürs Handy gebaut</li><li>Eine Änderungsrunde inklusive</li></ul></div>
+    <div class="card b rv"><div><h3>Telegram-Bot</h3><div class="n">60 €</div></div><ul><li>Bestellungen und Reservierungen aufs Handy</li><li>Passt zu jeder der Seiten</li></ul></div>
+  </div>
+</section>
+
+<footer class="fin" id="kontakt">
+  <h2 class="rv">Ein Foto Ihrer Karte genügt.</h2>
+  <div class="row"><a class="btn" href="mailto:hallo@renat.example">hallo@renat.example</a><a class="btn o" href="https://t.me/renat.example">Telegram</a></div>
+  <div class="foot"><span>Mayen · Beispieldaten in den Demos, Fotos aus Wikimedia Commons</span><span>Renat, Webseiten</span></div>
+</footer>
+
+<script>
+(function(){
+var S=[
+{n:"Pizzeria Pugliese",t:"Feuer als Auftakt",d:"Dunkle Seite, der Ofen füllt den Bildschirm, Funken steigen auf. Gebaut für den Abend.",u:"https://lawago23.github.io/pugliese-forno-demo/",bg:"#15100d",ink:"#f4ece1"},
+{n:"Döner der Sonne",t:"Laut und gelb",d:"Senfgelb, große Schrift, ein Laufband. Man sieht es von der anderen Straßenseite.",u:"https://lawago23.github.io/doener-sonne-neu-demo/",bg:"#f6b81b",ink:"#1a1208"},
+{n:"einfach starck der INbiss",t:"Die Karte als Kassenbon",d:"Papier, Monospace, ein Stempel. Die Karte sieht aus, wie sie bei der Bestellung aufs Papier kommt.",u:"https://lawago23.github.io/einfach-starck-neu-demo/",bg:"#ecebe5",ink:"#101010"},
+{n:"Emosh's Döner & Pizza",t:"Zwei Küchen, eine Diagonale",d:"Tiefes Türkis, Orange als einziger Akzent, das Foto schneidet diagonal ins Bild.",u:"https://lawago23.github.io/emoshs-neu-demo/",bg:"#0e3b3a",ink:"#f5efe3"},
+{n:"Backstube Eifel",t:"Von vier bis sechs Uhr",d:"Creme und Tannengrün, das Foto in der Bogenform des Ofens, eine Uhr, die mit dem Teig hochzählt.",u:"https://lawago23.github.io/baeckerei-eifel-demo/",bg:"#f4ead7",ink:"#2b1d0e"}
+];
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// hero words
+var h=document.getElementById('h1');var w=h.textContent.split(' ');h.innerHTML=w.map(function(x,i){return '<span class="w" aria-hidden="true"><span style="--i:'+i+'">'+x+'</span></span>'}).join(' ');
+var tk=['Pizzeria','Döner','Imbiss','Bäckerei','Café','Mayen'];var t=tk.map(function(x){return '<span>'+x+'</span><span>/</span>'}).join('');document.getElementById('tk').innerHTML=t+t+t+t;
+// build stage
+var meta=document.getElementById('meta'),shots=document.getElementById('shots'),mob=document.getElementById('mob');
+meta.innerHTML=S.map(function(s,i){return '<div class="slidetxt'+(i?'':' on')+'"><small>'+String(i+1).padStart(2,'0')+' / 05</small><h2>'+s.n+'</h2><p><b>'+s.t+'.</b> '+s.d+'</p><a href="'+s.u+'" target="_blank" rel="noopener">Seite live öffnen <span>&rarr;</span></a></div>'}).join('')+'<div class="count" id="cnt"></div><div class="dots" id="dots">'+S.map(function(_,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</div>';
+shots.innerHTML=S.map(function(s,i){return '<iframe title="'+s.n+'" data-src="'+s.u+'" loading="lazy" tabindex="-1"></iframe>'}).join('');
+mob.innerHTML=S.map(function(s,i){return '<div class="mitem"><h2>'+s.n+'</h2><p>'+s.t+'. '+s.d+'</p><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="shots"><iframe title="'+s.n+'" data-src="'+s.u+'" loading="lazy" tabindex="-1" class="on" style="width:1440px;height:900px"></iframe></div></div><a href="'+s.u+'" target="_blank" rel="noopener">Seite live öffnen &rarr;</a></div>'}).join('');
+var ifr=[].slice.call(shots.querySelectorAll('iframe')),txt=[].slice.call(meta.querySelectorAll('.slidetxt')),dots=[].slice.call(document.querySelectorAll('#dots i'));
+function scaleAll(){document.querySelectorAll('.shots').forEach(function(c){var k=c.clientWidth/1440;c.querySelectorAll('iframe').forEach(function(f){f.style.transform='scale('+k+')'})})}
+addEventListener('resize',scaleAll);scaleAll();
+var cur=-1;
+function set(i){if(i===cur)return;cur=i;
+ var s=S[i];document.querySelector('.work').style.setProperty('--stage',s.bg);document.querySelector('.work').style.setProperty('--stage-ink',s.ink);
+ ifr.forEach(function(f,j){if(Math.abs(j-i)<=1&&!f.src)f.src=f.dataset.src;f.classList.toggle('on',j===i)});
+ txt.forEach(function(e,j){e.classList.toggle('on',j===i)});dots.forEach(function(e,j){e.classList.toggle('on',j===i)});
+ document.getElementById('url').textContent=s.u.replace('https://','');
+ document.getElementById('cnt').textContent='';
+}
+var work=document.querySelector('.work');
+function onScroll(){
+ var r=work.getBoundingClientRect(),tot=r.height-innerHeight,p=Math.min(1,Math.max(0,-r.top/tot));
+ set(Math.min(S.length-1,Math.floor(p*S.length*0.999)));
+ // work bg colour fades back to page bg before leaving
+ var steps=document.getElementById('steps'),sr=steps.getBoundingClientRect();
+ var q=Math.min(1,Math.max(0,(innerHeight*.85-sr.top)/(innerHeight*.6)));steps.style.setProperty('--p',q);
+ [].forEach.call(steps.children,function(li,k){li.classList.toggle('on',q>(k+.2)/4)});
+}
+var tick=0;addEventListener('scroll',function(){if(tick)return;tick=requestAnimationFrame(function(){tick=0;onScroll()})},{passive:true});
+set(0);onScroll();
+// mobile lazy iframes
+var mio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target.querySelector('iframe');if(f&&!f.src)f.src=f.dataset.src;mio.unobserve(e.target)}})},{rootMargin:'300px'});
+document.querySelectorAll('.mitem').forEach(function(m){mio.observe(m)});
+// tilt frame with pointer
+var fr=document.getElementById('frame');
+if(!rm&&matchMedia('(hover:hover)').matches){addEventListener('mousemove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;fr.style.setProperty('--ry',(-5+x*5).toFixed(2)+'deg');fr.style.setProperty('--rx',(2-y*4).toFixed(2)+'deg')})}
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
