@@ -1310,7 +1310,7 @@ function renderSlides() {
       '<p><b>' + tag + '.</b> ' + desc + '</p>' +
       '<div class="frame">' +
         '<div class="bar"><i></i><i></i><i></i><u>' + s.live_u.replace('https://', '') + '</u></div>' +
-        '<div class="shots"><iframe title="' + s.n + '" data-src="' + s.u + '" loading="lazy" tabindex="-1" class="on" style="width:1440px;height:900px"></iframe></div>' +
+        '<div class="shots"><iframe title="' + s.n + '" data-src="' + s.live_u + '" loading="lazy" tabindex="-1" class="on" style="width:1440px;height:900px"></iframe></div>' +
       '</div>' +
       '<a href="' + s.live_u + '" target="_blank" rel="noopener">' + btnText + '</a>' +
     '</div>';
@@ -1318,7 +1318,7 @@ function renderSlides() {
 }
 
 shots.innerHTML = S.map(function(s){
-  return '<iframe title="' + s.n + '" data-src="' + s.u + '" loading="lazy" tabindex="-1"></iframe>';
+  return '<iframe title="' + s.n + '" data-src="' + s.live_u + '" loading="lazy" tabindex="-1"></iframe>';
 }).join('');
 
 renderSlides();
